@@ -27,7 +27,7 @@ endif()
 
 list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 
-find_package (OpenMesh REQUIRED)
+include(OpenMesh)
 
 set (SOURCES "")
 set (INCLUDE_DIRS "")
@@ -35,8 +35,6 @@ set (LIBRARIES "")
 set (LIBRARY_DIRS "")
 
 list (APPEND SOURCES interfaces/c/qex.cc src/predicates.c src/MeshExtractor.cc)
-list (APPEND INCLUDE_DIRS ${OPENMESH_INCLUDE_DIRS})
-list (APPEND LIBRARIES ${OPENMESH_LIBRARIES})
 
 include_directories (
     ${CMAKE_SOURCE_DIR}/interfaces/c
@@ -51,8 +49,8 @@ link_directories (
 add_library (QEx SHARED ${SOURCES})
 add_library (QExStatic STATIC ${SOURCES})
 
-target_link_libraries (QEx ${LIBRARIES})
-target_link_libraries (QExStatic ${LIBRARIES})
+target_link_libraries (QEx ${LIBRARIES} openmesh::core)
+target_link_libraries (QExStatic ${LIBRARIES} openmesh::core)
 
 #
 # In order for the exact predicates to work the compiler

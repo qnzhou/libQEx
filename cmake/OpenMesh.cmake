@@ -11,4 +11,6 @@ CPMAddPackage(
   GIT_TAG d9b65de1de265d48120220c485134c4e7cb733c6
 )
 
+target_compile_features(OpenMeshCore PUBLIC cxx_std_20)
+
 add_library(openmesh::core ALIAS OpenMeshCore)

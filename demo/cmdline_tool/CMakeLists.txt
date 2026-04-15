@@ -50,7 +50,7 @@ if (NOT WIN32 )
   set_target_properties(cmdline_tool
       PROPERTIES
       INCLUDE_DIRECTORIES "${CMDLINE_TOOL_INCLUDE_DIRS}"
-      COMPILE_FLAGS "-Wall -Wextra -pedantic -std=c++98 -Wno-long-long"
+      COMPILE_FLAGS "-Wall -Wextra -pedantic -std=c++20 -Wno-long-long"
   )
 
 endif()

@@ -64,7 +64,7 @@ target_link_libraries (QExStatic ${LIBRARIES} openmesh::core)
 #
 set (QEX_COMPILE_FLAGS "-Wall")
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
-    set (QEX_COMPILE_FLAGS "${QEX_COMPILE_FLAGS} -msse -mfpmath=sse -pedantic -Weverything")
+    set (QEX_COMPILE_FLAGS "${QEX_COMPILE_FLAGS} -pedantic -Weverything")
 elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
     set (QEX_COMPILE_FLAGS "${QEX_COMPILE_FLAGS} -msse -mfpmath=sse -pedantic -Wextra")
 elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Intel")

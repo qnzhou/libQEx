@@ -18,7 +18,7 @@
 # along with QEx.  If not, see <http://www.gnu.org/licenses/>.
 #   
 
-cmake_minimum_required (VERSION 2.6)
+cmake_minimum_required (VERSION 3.5)
 
 # Only set project name if not build from within another project.
 if("${PROJECT_NAME}" STREQUAL "")
